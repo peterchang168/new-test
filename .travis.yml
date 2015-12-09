@@ -12,3 +12,10 @@ script:
   #- $TESTFOLDER/unittest.sh
   - cd ${TRAVIS_BUILD_DIR}
   - ./build.sh ./
+deploy :
+  provider: s3
+  region: "us-west-2"
+  bucket: "test.tmwrs"
+  skip_cleanup: true
+  local_dir: ptn
+  upload-dir: travis-builds
