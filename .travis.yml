@@ -6,20 +6,9 @@ env:
   - TESTFOLDER=test/agent2 
 install:
   - "pip install coverage"
-    - git clone https://github.com/boto/botocore.git && cd botocore && python setup.py install
-    - git clone https://github.com/boto/boto3.git && cd boto3 && python setup.py install
-#script:
-#  - python --version
+  #- git clone https://github.com/boto/botocore.git && cd botocore && python setup.py install
+  #- git clone https://github.com/boto/boto3.git && cd boto3 && python setup.py install
 script: 
   - $TESTFOLDER/unittest.sh
-    - cd ${TRAVIS_BUILD_DIR}
-    - ./build.sh ./
-deploy :
-  provider: s3
-  access_key_id: "AKIAIYIQQTQOEYGK6RWA"
-  secret_access_key: "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"
-  region: "us-west-2"
-  bucket: "test.tmwrs"
-  skip_cleanup: true
-  local_dir: ptn
-  upload-dir: travis-builds
+  - cd ${TRAVIS_BUILD_DIR}
+  - ./build.sh ./
