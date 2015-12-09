@@ -25,4 +25,5 @@ deploy :
   skip_cleanup: true
   local_dir: ptn
   upload-dir: travis-builds
-
+notifications:
+  slack: peter-travis:YRV9bI0k8VV7oAtkEpCZ7pjI
