@@ -1,11 +1,12 @@
 language: python
 python:
   - "2.6"
-#env:
-#  - TESTFOLDER=test/agent1 
-#  - TESTFOLDER=test/agent2 
+env:
+  - TESTFOLDER=test/agent1 
+  - TESTFOLDER=test/agent2 
 install:
   - "pip install coverage"
-script:
-  - python --version
-#script: $TESTFOLDER/unittest.sh
+#script:
+#  - python --version
+script: 
+  - $TESTFOLDER/unittest.sh
