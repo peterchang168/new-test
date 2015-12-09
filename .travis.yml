@@ -14,6 +14,8 @@ script:
   - ./build.sh ./
 deploy :
   provider: s3
+  access_key_id: ${access_key_id}
+  secret_access_key: ${secret_access_key}
   region: "us-west-2"
   bucket: "test.tmwrs"
   skip_cleanup: true
