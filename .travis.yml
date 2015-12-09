@@ -1,15 +1,15 @@
 language: python
 python:
   - "2.6"
-#env:
-#  - TESTFOLDER=test/agent1 
-#  - TESTFOLDER=test/agent2 
+env:
+  - TESTFOLDER=test/agent1 
+  - TESTFOLDER=test/agent2 
 install:
   - "pip install coverage"
   - git clone https://github.com/boto/botocore.git && cd botocore && python setup.py install
   - git clone https://github.com/boto/boto3.git && cd boto3 && python setup.py install
 script: 
-  #- $TESTFOLDER/unittest.sh
+  - $TESTFOLDER/unittest.sh
   - cd ${TRAVIS_BUILD_DIR}
   - ./build.sh ./
 deploy :
